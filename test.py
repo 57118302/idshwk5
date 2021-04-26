@@ -1,8 +1,7 @@
-import numpy as np
 from sklearn.ensemble import RandomForestClassifier
+import numpy as np
 
 domain_list = []
-
 
 def init_data(filename):
     f = open(filename)
@@ -37,7 +36,6 @@ def analyse_domain(s):
     domain_analyse_list.append(calc_entropy(s))
     return domain_analyse_list
 
-
 class Domain:
     def __init__(self, domain, label):
         self.domain = domain
@@ -53,7 +51,6 @@ class Domain:
             return 0
         else:
             return 1
-
 
 def main():
     init_data("train.txt")
@@ -88,7 +85,6 @@ def main():
             line = line + ",dga\n"
         f.write(line)
     f.close()
-
 
 if __name__ == '__main__':
     main()
